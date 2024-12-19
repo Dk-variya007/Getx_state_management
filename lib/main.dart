@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:getx_demo/screen/counter_screen.dart';
-import 'package:getx_demo/screen/home_screen.dart';
-import 'package:getx_demo/provider/local.dart';
-import 'package:getx_demo/screen/second.dart';
-import 'package:getx_demo/screen/slider_screen.dart';
-import 'package:getx_demo/screen/thired.dart';
+import 'package:getx_demo/GetxWithBinding/Counter/Bindig/counter_binding.dart';
+import 'package:getx_demo/GetxWithBinding/Counter/VIew/counter.dart';
+import 'package:getx_demo/GetxWithBinding/NavigatorWithArgument/Binding/screen1_binding.dart';
+import 'package:getx_demo/GetxWithBinding/NavigatorWithArgument/View/screen1.dart';
+
+import 'GetxWithBinding/NavigatorWithArgument/Binding/navigator_rout_binding.dart';
+import 'GetxWithBinding/NavigatorWithArgument/Binding/screen2_binding.dart';
+import 'GetxWithBinding/NavigatorWithArgument/View/navigator_screen.dart';
+import 'GetxWithBinding/NavigatorWithArgument/View/screen2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,18 +23,21 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-    //  translations: Languages(),
+      //  translations: Languages(),
+
       //locale: Locale('en','US'),
-      //fallbackLocale: Locale('ur','PK'),
+      //fallbackLocale: Locale('ur','PK')
+      // ,
+      initialBinding: NavigatorRoutBinding(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CounterClass(),
-      // getPages: [
-      //   GetPage(name: '/', page:()=>HomeScreen()),
-      //   GetPage(name: '/secondClass', page: ()=>secondClass()),
-      //   GetPage(name: '/thirdClass', page: ()=>thirdClass())
-      // ],
+      home: const NavigatorScreen(),
+      getPages: [
+        GetPage(name: '/', page: () => const NavigatorScreen()),
+        GetPage(name: '/screen1', page: () => const Screen1()),
+        GetPage(name: '/screen2', page: () => const Screen2())
+      ],
     );
   }
 }

@@ -3,12 +3,12 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_demo/provider/slider_controller.dart';
-import 'package:getx_demo/provider/counter_controller.dart';
-import 'package:getx_demo/provider/favorite.dart';
-import 'package:getx_demo/provider/imagepicker_controller.dart';
-import 'package:getx_demo/provider/login_controller.dart';
-import 'package:getx_demo/provider/notification.dart';
+import 'package:getx_demo/getx/slider_controller.dart';
+import 'package:getx_demo/getx/counter_controller.dart';
+import 'package:getx_demo/getx/favorite.dart';
+import 'package:getx_demo/getx/imagepicker_controller.dart';
+import 'package:getx_demo/getx/login_controller.dart';
+import 'package:getx_demo/getx/notification.dart';
 import 'package:getx_demo/screen/second.dart';
 
 class HomeScreen extends StatefulWidget {

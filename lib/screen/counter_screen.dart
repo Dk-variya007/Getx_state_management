@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_demo/provider/counter_controller.dart';
+import 'package:getx_demo/getx/counter_controller.dart';
 
 class CounterClass extends StatefulWidget {
   const CounterClass({super.key});
@@ -21,11 +21,25 @@ class _CounterClassState extends State<CounterClass> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Obx(() => Text("${counterController.counter.value}")),
-          ElevatedButton(
-              onPressed: () {
-                counterController.increament();
-              },
-              child: const Icon(Icons.add)),
+          Row(
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    counterController.increament();
+                  },
+                  child: const Text("Add")),
+              ElevatedButton(
+                  onPressed: () {
+                    counterController.decrement();
+                  },
+                  child:const Text("Sub")),
+              ElevatedButton(
+                  onPressed: () {
+                    counterController.reset();
+                  },
+                  child: const Text("Reset")),
+            ],
+          ),
         ],
       ),
     );
